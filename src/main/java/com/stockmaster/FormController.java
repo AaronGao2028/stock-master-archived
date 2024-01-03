@@ -8,14 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +23,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class FormController {
     @PostMapping(value = "/submit-sectors")
     @ResponseBody
-    public Map<String, Object> submitSectors(@RequestParam(value = "sector", required = false) List<String> sectors,
+    public Map<String, Object> submitSectors(
+            @RequestParam(value = "sector", required = false) List<String> sectors,
             @RequestParam(value = "marketCap", required = false) List<String> marketCaps,
             @RequestParam(value = "dividend", required = false) List<String> dividends,
             @RequestParam(value = "numStocks", required = false) String numStocks) {

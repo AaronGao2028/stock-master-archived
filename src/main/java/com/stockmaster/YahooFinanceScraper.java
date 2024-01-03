@@ -1,6 +1,5 @@
 package com.stockmaster;
 
-import org.hibernate.boot.model.source.internal.hbm.Helper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -9,11 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class YahooFinanceScraper {
     public static void main(String[] args) throws IOException {
