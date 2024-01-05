@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@CrossOrigin(origins = "*", allowedHeaders = "*", methods = { RequestMethod.GET, RequestMethod.POST })
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {
+        RequestMethod.GET, RequestMethod.POST })
 public class FormController {
     @PostMapping(value = "/submit-sectors")
     @ResponseBody
@@ -260,6 +261,7 @@ public class FormController {
             dividendAllocationList
                     .add(new DividendAllocation(key, ((int) (100 * dividendAllocationMap.get(key))) / 100.00));
         }
+
         Map<String, Object> responseMap = new HashMap<>();
         responseMap.put("goodStockAllocationList", goodStockAllocationList);
         responseMap.put("sectorAllocationList", sectorAllocationList);
